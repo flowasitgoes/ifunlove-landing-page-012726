@@ -1,16 +1,33 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { useLanguage } from "./language-provider"
+
+const HERO_BG_SRC = "/ifunlove-landing-page.png"
 
 export function Hero() {
   const { t } = useLanguage()
+  const [bgLoaded, setBgLoaded] = useState(false)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = HERO_BG_SRC
+    img.onload = () => setBgLoaded(true)
+  }, [])
 
   return (
     <section
-      className="relative w-full min-h-[85vh] flex flex-col items-center justify-end md:justify-center px-4 sm:px-6 pb-10 md:pb-0 bg-no-repeat [background-size:100%] [background-position:center_10%] md:[background-size:70%] md:[background-position:right]"
-      style={{ backgroundImage: "url('/ifunlove-landing-page.png')" }}
+      className="relative w-full min-h-[85vh] flex flex-col items-center justify-end md:justify-center px-4 sm:px-6 pb-10 md:pb-0 overflow-hidden"
       aria-label="Hero"
     >
+      <div
+        className="absolute inset-0 bg-no-repeat transition-opacity duration-700 ease-out [background-size:100%] [background-position:center_10%] md:[background-size:70%] md:[background-position:right]"
+        style={{
+          backgroundImage: `url('${HERO_BG_SRC}')`,
+          opacity: bgLoaded ? 1 : 0,
+        }}
+        aria-hidden
+      />
       <div className="relative z-10 max-w-3xl mx-auto md:ml-0 md:mr-[300px] text-center w-full">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-relaxed text-balance tracking-tight">
           {t.headline}

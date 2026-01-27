@@ -93,7 +93,7 @@ export const translations = {
     langSwitch: "EN",
 
     // Hero
-    headline: "小遊戲與溫柔的小工具，陪你度過日常片刻。",
+    headline: "小遊戲與柔情便利的小工具，陪你度過日常片刻。",
     subheadline: "無需註冊。無需下載。打開就能玩。",
     ctaGames: "玩遊戲",
     ctaTools: "探索工具",
