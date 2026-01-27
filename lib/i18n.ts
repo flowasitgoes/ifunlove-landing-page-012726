@@ -121,7 +121,7 @@ export const translations = {
         url: "https://cat-maze.ifunlove.com",
       },
       {
-        name: "錢擺在眼前！",
+        name: "40擺在眼前！",
         description: "世界是充滿財富的，出動你的手眼協調，讓我們把忽隱忽現的銅板收集起來吧！",
         url: "https://coins.ifunlove.com",
       },
