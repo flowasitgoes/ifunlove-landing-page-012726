@@ -7,15 +7,11 @@ export function Hero() {
 
   return (
     <section
-      className="relative w-full min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-6 bg-no-repeat"
-      style={{
-        backgroundImage: "url('/ifunlove-landing-page.png')",
-        backgroundSize: "70%",
-        backgroundPosition: "right",
-      }}
+      className="relative w-full min-h-[85vh] flex flex-col items-center justify-end md:justify-center px-4 sm:px-6 pb-10 md:pb-0 bg-no-repeat [background-size:100%] [background-position:center_10%] md:[background-size:70%] md:[background-position:right]"
+      style={{ backgroundImage: "url('/ifunlove-landing-page.png')" }}
       aria-label="Hero"
     >
-      <div className="relative z-10 max-w-3xl mx-auto md:ml-0 md:mr-[300px] text-center">
+      <div className="relative z-10 max-w-3xl mx-auto md:ml-0 md:mr-[300px] text-center w-full">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground leading-relaxed text-balance tracking-tight">
           {t.headline}
         </h2>
@@ -37,10 +33,6 @@ export function Hero() {
           >
             {t.ctaTools}
           </a>
-        </div>
-
-        <div className="mt-14 text-muted-foreground/40 text-xl tracking-[0.3em]" aria-hidden="true">
-          ⋆ · ⋆ · ⋆
         </div>
       </div>
     </section>
