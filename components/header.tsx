@@ -6,7 +6,8 @@ export function Header() {
   const { locale, setLocale, t } = useLanguage()
 
   return (
-    <header className="w-full py-6 px-4 sm:px-6">
+    <div className="w-full py-6 px-4 sm:px-6 bg-background/40 backdrop-blur-sm">
+      <header className="w-full">
       <div className="max-w-3xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-2xl" aria-hidden="true">~</span>
@@ -45,5 +46,6 @@ export function Header() {
         </div>
       </div>
     </header>
+    </div>
   )
 }
