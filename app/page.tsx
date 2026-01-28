@@ -7,6 +7,7 @@ import { AdBanner } from "@/components/ad-banner"
 import { FeaturedContent } from "@/components/featured-content"
 import { BrowseByMood } from "@/components/browse-by-mood"
 import { About } from "@/components/about"
+import { Donation } from "@/components/donation"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
           <BrowseByMood />
 
           <About />
+
+          <Donation />
         </main>
 
         <Footer />

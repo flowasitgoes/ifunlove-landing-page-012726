@@ -83,6 +83,13 @@ export const translations = {
     aboutText:
       "This is a small personal playground on the internet. Some things are made just because they feel right. No pressure, no goals — just quiet moments of curiosity and joy.",
 
+    // Donation
+    donationTitle: "Support this space",
+    donationTagline: "If these games and tools brought you a smile, you can support their continued existence.",
+    donateViaStripe: "Donate with Stripe",
+    donateViaPatreon: "Support on Patreon",
+    donateViaBmc: "Buy me a coffee",
+
     // Footer
     copyright: "© 2026 ifunlove",
     madeWith: "Made with care",
@@ -164,6 +171,13 @@ export const translations = {
     aboutTitle: "關於",
     aboutText:
       "這是網路上的一個小小個人遊樂場。有些東西的存在，只是因為感覺對了。沒有壓力，沒有目標——只有安靜的好奇心與喜悅時刻。",
+
+    // Donation
+    donationTitle: "支持這個小天地",
+    donationTagline: "若這些小遊戲與工具曾讓你會心一笑，歡迎以一杯咖啡或贊助支持它們繼續存在。",
+    donateViaStripe: "以 Stripe 贊助",
+    donateViaPatreon: "在 Patreon 支持",
+    donateViaBmc: "請我喝杯咖啡",
 
     // Footer
     copyright: "© 2026 ifunlove",
