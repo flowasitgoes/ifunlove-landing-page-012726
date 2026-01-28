@@ -41,9 +41,10 @@ function ContentCard({
   )
 }
 
-// Emoji for each: 2048, Longcat, Coins, Color City, Gamebox, Guitarship, Border Maker, Kaomoji
+// Emoji for each: 2048, Longcat, Coins, Color City, Gamebox, Guitarship, Border Maker, Kaomoji, Pray for you
 const gameIcons = ["🎮", "🐱", "🪙", "🏙️", "📦", "🎸"]
 const toolIcons = ["🖼️", "☺️"]
+const prayerIcons = ["🙏"]
 
 export function FeaturedContent() {
   const { t } = useLanguage()
@@ -88,6 +89,27 @@ export function FeaturedContent() {
                 item={tool}
                 buttonText={t.openButton}
                 icon={toolIcons[index % toolIcons.length]}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Prayers Section */}
+        <div id="prayers" className="mt-12 sm:mt-14 scroll-mt-16">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-primary/50 text-lg" aria-hidden="true">✿</span>
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+              {t.prayersTitle}
+            </h3>
+            <span className="text-primary/50 text-lg" aria-hidden="true">✿</span>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {t.prayers.map((item, index) => (
+              <ContentCard
+                key={item.name}
+                item={item}
+                buttonText={t.prayButton}
+                icon={prayerIcons[index % prayerIcons.length]}
               />
             ))}
           </div>

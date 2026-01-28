@@ -23,8 +23,10 @@ export const translations = {
     featuredTitle: "Featured",
     gamesTitle: "Games",
     toolsTitle: "Tools",
+    prayersTitle: "Prayers",
     playButton: "Play",
     openButton: "Open",
+    prayButton: "Enter",
 
     // Games
     games: [
@@ -74,6 +76,16 @@ export const translations = {
       },
     ],
 
+    // Prayers
+    prayers: [
+      {
+        name: "Pray for you",
+        description:
+          "Write down today's emotions, thoughts, or feelings. Let's reframe them from a positive perspective and make a prayer for you, through gratitude, calmness, we can again feel happiness, be present and find inner peace.",
+        url: "https://pray.ifunlove.com",
+      },
+    ],
+
     // Browse by mood
     browseTitle: "Browse by Mood",
     moods: ["Relax", "Think", "Create", "Focus", "Reflect"],
@@ -112,8 +124,10 @@ export const translations = {
     featuredTitle: "精選",
     gamesTitle: "遊戲",
     toolsTitle: "工具",
+    prayersTitle: "祈願",
     playButton: "開始",
     openButton: "開啟",
+    prayButton: "進入",
 
     // Games
     games: [
@@ -160,6 +174,16 @@ export const translations = {
         name: "顏文字小幫手",
         description: "盛裝豐富表情的日本顏文字被引進到本站啦！在你與朋友或家人傳遞訊息時，加入無限想像與美意。雙擊即可複製貼上，還藏有蛋糕與唐詩彩蛋喔！",
         url: "https://kaomoji.ifunlove.com",
+      },
+    ],
+
+    // Prayers
+    prayers: [
+      {
+        name: "為你禱告",
+        description:
+          "寫下今天的心情、想法或感受，願想，試著用正向的角度重新觀看，並為你寫下一段誠懇的祝福，在感謝中重拾幸福、透過凝聚與寧靜禱告。",
+        url: "https://pray.ifunlove.com",
       },
     ],
 
