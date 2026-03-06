@@ -7,6 +7,7 @@ export const translations = {
   en: {
     // Header
     logo: "ifunlove",
+    siteNameEn: "",
     langSwitch: "中文",
 
     // Hero
@@ -21,7 +22,8 @@ export const translations = {
 
     // Featured section
     featuredTitle: "Featured",
-    gamesTitle: "Games",
+    androidGamesTitle: "Android Games",
+    gamesTitle: "Web Games",
     toolsTitle: "Tools",
     prayersTitle: "Prayers",
     playButton: "Play",
@@ -59,6 +61,22 @@ export const translations = {
         name: "Guitarship",
         description: "Pilot a guitar-powered spaceship, fire melodic sound waves, and resonate with crystals drifting through space. Life is made of rice and rhythm—let's launch the journey now.",
         url: "https://guitarship.ifunlove.com",
+      },
+      {
+        name: "Egg Cute",
+        description: "A cozy 9-grid matching game with cute eggs. Pair them up and enjoy a gentle, healing puzzle—no pressure, just quiet moments of play.",
+        url: "https://eggcute.ifunlove.com",
+      },
+    ],
+
+    // Android Games
+    androidGames: [
+      {
+        name: "Egg Cute",
+        description:
+          "Egg Cute is now available on Android! 🧡\nDownload the app and start playing!\n\nIt's a cozy 9-grid matching puzzle full of adorable visuals. Match the pairs, relax your mind, and.. \n enjoy a gentle little game —\n easy soothing, just calm and cozy moments.",
+        url: "https://play.google.com/store/apps/details?id=com.ifunlove.eggcute",
+        youtubeId: "z0bEGhZt9bo",
       },
     ],
 
@@ -103,12 +121,13 @@ export const translations = {
     donateViaBmc: "Buy me a coffee",
 
     // Footer
-    copyright: "© 2026 ifunlove",
+    copyright: "© 2026 ifunlove 愛瘋樂",
     madeWith: "Made with care",
   },
   "zh-TW": {
-    // Header
-    logo: "ifunlove",
+    // Header（愛瘋樂 = ifunlove 中文名，便於搜尋「愛瘋樂」找到本站）
+    logo: "愛瘋樂",
+    siteNameEn: "ifunlove",
     langSwitch: "EN",
 
     // Hero
@@ -122,7 +141,8 @@ export const translations = {
 
     // Featured section
     featuredTitle: "精選",
-    gamesTitle: "遊戲",
+    androidGamesTitle: "Android 遊戲",
+    gamesTitle: "網站遊戲",
     toolsTitle: "工具",
     prayersTitle: "祈願",
     playButton: "開始",
@@ -161,6 +181,22 @@ export const translations = {
         description: "開著吉他戰艦，射出動人的旋律，和宇宙中的水晶及礦石共振。生命是由白米飯構成的——不多說，我們現在就啟程吧！",
         url: "https://guitarship.ifunlove.com",
       },
+      {
+        name: "小蛋配對",
+        description: "療癒系九宮格配對遊戲。和小蛋們一起配對，在輕鬆的節奏裡享受安靜的遊戲時光。",
+        url: "https://eggcute.ifunlove.com",
+      },
+    ],
+
+    // Android Games
+    androidGames: [
+      {
+        name: "小蛋配對",
+        description:
+          "小蛋配對登上 Android 了！快下載 App 一起玩！！療癒系九宮格配對遊戲。和小蛋們一起配對，在輕鬆的節奏裡享受安靜的遊戲時光。",
+        url: "https://play.google.com/store/apps/details?id=com.ifunlove.eggcute",
+        youtubeId: "z0bEGhZt9bo",
+      },
     ],
 
     // Tools
@@ -194,7 +230,7 @@ export const translations = {
     // About
     aboutTitle: "關於",
     aboutText:
-      "這是網路上的一個小小個人遊樂場。有些東西的存在，只是因為感覺對了。沒有壓力，沒有目標——只有安靜的好奇心與喜悅時刻。",
+      "愛瘋樂（ifunlove）是網路上的一個小小個人遊樂場。有些東西的存在，只是因為感覺對了。沒有壓力，沒有目標——只有安靜的好奇心與喜悅時刻。",
 
     // Donation
     donationTitle: "支持這個小天地",
@@ -204,7 +240,7 @@ export const translations = {
     donateViaBmc: "請我喝杯咖啡",
 
     // Footer
-    copyright: "© 2026 ifunlove",
+    copyright: "© 2026 ifunlove 愛瘋樂",
     madeWith: "用心製作",
   },
 } as const

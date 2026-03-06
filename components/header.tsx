@@ -13,6 +13,11 @@ export function Header() {
           <span className="text-2xl" aria-hidden="true">~</span>
           <h1 className="text-xl sm:text-2xl font-bold text-foreground tracking-wide">
             {t.logo}
+            {t.siteNameEn ? (
+              <span className="ml-1.5 text-lg font-normal text-muted-foreground">
+                （{t.siteNameEn}）
+              </span>
+            ) : null}
           </h1>
           <span className="text-2xl" aria-hidden="true">~</span>
         </div>

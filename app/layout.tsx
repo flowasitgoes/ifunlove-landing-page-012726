@@ -12,7 +12,7 @@ const fontRounded = M_PLUS_Rounded_1c({
 
 const title = 'ifunlove — Playful Games, Art & Design from Taiwan'
 const description =
-  'A playful digital universe from Taiwan: small web games, creative tools, and design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
+  'A playful digital universe from Taiwan (愛瘋樂 ifunlove): small web games, creative tools, and design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
 const ogImage = { url: '/og-image.jpg', alt: 'ifunlove — playful games, art & design from Taiwan' }
 
 export const metadata: Metadata = {
@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title,
   description,
   keywords: [
+    '愛瘋樂',
+    'ifunlove 愛瘋樂',
+    '愛瘋樂 ifunlove',
+    '台灣 愛瘋樂',
     'Taiwan digital culture',
     'playful web games',
     'indie games',
@@ -69,11 +73,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'ifunlove',
+    alternateName: ['愛瘋樂', 'ifunlove 愛瘋樂'],
+    url: 'https://ifunlove.com',
+    description: description,
+  }
+
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="preload" href="/ifunlove-landing-page.png" as="image" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={`${fontRounded.className} antialiased`}>
         {children}
