@@ -25,6 +25,7 @@ export const translations = {
     androidGamesTitle: "Android Games",
     gamesTitle: "Web Games",
     toolsTitle: "Tools",
+    socialTitle: "Socials",
     prayersTitle: "Prayers",
     playButton: "Play",
     openButton: "Open",
@@ -94,6 +95,16 @@ export const translations = {
       },
     ],
 
+    // Social
+    social: [
+      {
+        name: "Keelung Cooking Platform",
+        description:
+          "Learn cooking from Keelung grandmas. Local recipes, local stories, authentic cooking — match the local cook teams!",
+        url: "https://keelung-cook.ifunlove.com/",
+      },
+    ],
+
     // Prayers
     prayers: [
       {
@@ -144,6 +155,7 @@ export const translations = {
     androidGamesTitle: "Android 遊戲",
     gamesTitle: "網站遊戲",
     toolsTitle: "工具",
+    socialTitle: "社群",
     prayersTitle: "祈願",
     playButton: "開始",
     openButton: "開啟",
@@ -210,6 +222,16 @@ export const translations = {
         name: "顏文字小幫手",
         description: "盛裝豐富表情的日本顏文字被引進到本站啦！在你與朋友或家人傳遞訊息時，加入無限想像與美意。雙擊即可複製貼上，還藏有蛋糕與唐詩彩蛋喔！",
         url: "https://kaomoji.ifunlove.com",
+      },
+    ],
+
+    // Social
+    social: [
+      {
+        name: "向基隆阿嬤學做菜",
+        description:
+          "基隆廚藝平台：在地食譜、傳說故事、民間功夫。向基隆阿嬤學做菜，一起探索在地滋味。",
+        url: "https://keelung-cook.ifunlove.com/",
       },
     ],
 

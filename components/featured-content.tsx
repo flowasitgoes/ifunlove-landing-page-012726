@@ -4,6 +4,7 @@ import { useLanguage } from "./language-provider"
 
 const EGGCUTE_URL = "https://eggcute.ifunlove.com"
 const PRAY_URL = "https://pray.ifunlove.com"
+const KEELUNG_COOK_URL = "https://keelung-cook.ifunlove.com/"
 
 type ContentItem = {
   name: string
@@ -22,10 +23,45 @@ function ContentCard({
   buttonText: string
   icon: string
   featured?: boolean
-  featuredStyle?: "violet" | "yellow"
+  featuredStyle?: "violet" | "yellow" | "lightblue"
 }) {
   const isEggCute = item.url === EGGCUTE_URL
   const isPrayFeatured = item.url === PRAY_URL && featuredStyle === "yellow"
+  const isKeelungCookFeatured = item.url === KEELUNG_COOK_URL && featuredStyle === "lightblue"
+
+  if (isKeelungCookFeatured) {
+    return (
+      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#9fc8e0] bg-[#b6dfed] dark:bg-[#2a5f6f]/40 dark:border-[#3d7a8c] p-5 [box-shadow:var(--shadow-soft)] hover:border-[#8fc1dc] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
+        <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
+          <div
+            className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#9fc8e0] dark:border-t-[#3d7a8c] border-l-[32px] border-l-transparent shadow-sm"
+            aria-hidden
+          />
+          <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider text-[#1e5f6f] dark:text-[#b6dfed] bg-white/90 dark:bg-[#1e4a57]/90 shadow-sm rotate-12 border border-[#9fc8e0]/60">
+            NEW
+          </span>
+        </div>
+        <div className="flex items-start gap-3 pr-8">
+          <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+              {item.description}
+            </p>
+          </div>
+        </div>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/card-link inline-flex items-center gap-2 mt-4 px-5 py-2.5 text-sm font-semibold rounded-[1rem] bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground active:scale-[0.98] transition-all duration-300"
+        >
+          {buttonText}
+          <span className="transition-transform group-hover/card-link:translate-x-0.5" aria-hidden="true">›</span>
+        </a>
+      </div>
+    )
+  }
 
   if (isPrayFeatured) {
     return (
@@ -123,6 +159,7 @@ function ContentCard({
 // Emoji for each: 2048, Longcat, Coins, Color City, Gamebox, Guitarship, Border Maker, Kaomoji, Pray for you
 const gameIcons = ["🎮", "🐱", "🪙", "🏙️", "📦", "🎸", "🥚"]
 const toolIcons = ["🖼️", "☺️"]
+const socialIcons = ["🍳"]
 const prayerIcons = ["🙏"]
 
 type AndroidGameItem = ContentItem & { youtubeId?: string }
@@ -257,6 +294,28 @@ export function FeaturedContent() {
                 item={tool}
                 buttonText={t.openButton}
                 icon={toolIcons[index % toolIcons.length]}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Socials Section */}
+        <div id="socials" className="mt-12 sm:mt-14 scroll-mt-16">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-primary/50 text-lg" aria-hidden="true">✦</span>
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+              {t.socialTitle}
+            </h3>
+            <span className="text-primary/50 text-lg" aria-hidden="true">✦</span>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {t.social.map((item, index) => (
+              <ContentCard
+                key={item.name}
+                item={item}
+                buttonText={t.openButton}
+                icon={socialIcons[index % socialIcons.length]}
+                featuredStyle={item.url === KEELUNG_COOK_URL ? "lightblue" : undefined}
               />
             ))}
           </div>
