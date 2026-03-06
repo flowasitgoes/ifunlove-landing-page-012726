@@ -31,13 +31,13 @@ function ContentCard({
 
   if (isKeelungCookFeatured) {
     return (
-      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#9fc8e0] bg-[#b6dfed] dark:bg-[#2a5f6f]/40 dark:border-[#3d7a8c] p-5 [box-shadow:var(--shadow-soft)] hover:border-[#8fc1dc] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
+      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#b0e8fb] bg-[#d9f4fd] dark:bg-sky-950/30 dark:border-sky-800/50 p-5 [box-shadow:var(--shadow-soft)] hover:border-[#99e0f9] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
         <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
           <div
-            className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#9fc8e0] dark:border-t-[#3d7a8c] border-l-[32px] border-l-transparent shadow-sm"
+            className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#b0e8fb] dark:border-t-sky-800/90 border-l-[32px] border-l-transparent shadow-sm"
             aria-hidden
           />
-          <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider text-[#1e5f6f] dark:text-[#b6dfed] bg-white/90 dark:bg-[#1e4a57]/90 shadow-sm rotate-12 border border-[#9fc8e0]/60">
+          <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider text-sky-700 dark:text-sky-200 bg-white/90 dark:bg-sky-900/80 shadow-sm rotate-12 border border-[#b0e8fb]/70">
             NEW
           </span>
         </div>
