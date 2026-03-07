@@ -49,8 +49,8 @@ export const translations = {
         url: "https://coins.ifunlove.com",
       },
       {
-        name: "Color Memory City",
-        description: "The sun has drained all the colors from the city. Use your memory to recall the missing hues and bring life back to the city objects, guided by flashing lights and rhythmic music.",
+        name: "Color Dance",
+        description: "Follow the color rhythm and piece together the brightest patterns. A free grid coloring game—no download, play in the browser.",
         url: "https://fill-colors.ifunlove.com",
       },
       {
@@ -179,8 +179,8 @@ export const translations = {
         url: "https://coins.ifunlove.com",
       },
       {
-        name: "填色記憶遊戲",
-        description: "城市的顏色被熱情的太陽蒸發了，目前的城市暫時看不到顏色。聰明的你已經在短時間內記住曾經出現的色彩，請你搭配著閃爍的音樂，為城市的物件填入生動的顏色吧！",
+        name: "填色遊戲",
+        description: "跟著顏色節奏，一起拼出最亮眼的圖案！網格填色網頁小遊戲，免下載打開即玩。",
         url: "https://fill-colors.ifunlove.com",
       },
       {
