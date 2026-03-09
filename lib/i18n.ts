@@ -30,6 +30,8 @@ export const translations = {
     playButton: "Play",
     openButton: "Open",
     prayButton: "Enter",
+    readMore: "more +",
+    readLess: "less -",
 
     // Games
     games: [
@@ -54,9 +56,9 @@ export const translations = {
         url: "https://fill-colors.ifunlove.com",
       },
       {
-        name: "Uncle Gamebox",
-        description: "A nostalgic game box inspired by early-2000s classics. Open it up to discover four retro mini-games and relive the joy of simple, timeless gameplay.",
-        url: "https://gamebox.ifunlove.com",
+        name: "Platform Jumper",
+        description: "Cute, playful UI with musical sounds. No win or lose—just relax. Jump with fun interactions and chords, climb as high as you like or enjoy falling. Endless and stress-free.",
+        url: "https://jumper.ifunlove.com/home",
       },
       {
         name: "Guitarship",
@@ -160,6 +162,8 @@ export const translations = {
     playButton: "開始",
     openButton: "開啟",
     prayButton: "進入",
+    readMore: "更多 +",
+    readLess: "收合 -",
 
     // Games
     games: [
@@ -184,9 +188,9 @@ export const translations = {
         url: "https://fill-colors.ifunlove.com",
       },
       {
-        name: "史萊姆的遊戲盒子",
-        description: "一款西元 2000 年左右盛行的古早遊戲盒子，打開後會發現有四款復古的小遊戲可以遊玩！動動手，試試這些充滿回憶的經典玩法吧！",
-        url: "https://gamebox.ifunlove.com",
+        name: "跳躍階梯遊戲",
+        description: "可愛療癒的介面，跳躍就像在彈音樂。沒有輸贏，放鬆就好——無限攀爬或盡情落下。每次跳躍都有互動與和絃，無壓力、不會 Game Over，適合小孩與休閒玩家。",
+        url: "https://jumper.ifunlove.com/home",
       },
       {
         name: "星際中的吉他戰艦",

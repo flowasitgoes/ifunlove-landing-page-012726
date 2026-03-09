@@ -1,10 +1,12 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { useLanguage } from "./language-provider"
 
 const EGGCUTE_URL = "https://eggcute.ifunlove.com"
 const PRAY_URL = "https://pray.ifunlove.com"
 const KEELUNG_COOK_URL = "https://keelung-cook.ifunlove.com/"
+const JUMPER_URL = "https://jumper.ifunlove.com/home"
 
 type ContentItem = {
   name: string
@@ -18,16 +20,86 @@ function ContentCard({
   icon,
   featured,
   featuredStyle,
+  readMore,
+  readLess,
 }: {
   item: ContentItem
   buttonText: string
   icon: string
   featured?: boolean
-  featuredStyle?: "violet" | "yellow" | "lightblue"
+  featuredStyle?: "violet" | "yellow" | "lightblue" | "green"
+  readMore: string
+  readLess: string
 }) {
+  const [expanded, setExpanded] = useState(false)
+  const [descriptionVisible, setDescriptionVisible] = useState(true)
   const isEggCute = item.url === EGGCUTE_URL
   const isPrayFeatured = item.url === PRAY_URL && featuredStyle === "yellow"
   const isKeelungCookFeatured = item.url === KEELUNG_COOK_URL && featuredStyle === "lightblue"
+  const isJumperFeatured = item.url === JUMPER_URL && featuredStyle === "green"
+
+  useEffect(() => {
+    if (!descriptionVisible) {
+      const t = setTimeout(() => setDescriptionVisible(true), 200)
+      return () => clearTimeout(t)
+    }
+  }, [descriptionVisible])
+
+  const handleToggle = () => {
+    setDescriptionVisible(false)
+    setExpanded((e) => !e)
+  }
+
+  const descriptionBlock = (
+    <>
+      <div
+        className={`transition-opacity duration-200 ease-out ${descriptionVisible ? "opacity-100" : "opacity-0"}`}
+      >
+        <p className={`mt-2 text-sm text-muted-foreground leading-relaxed ${!expanded ? "line-clamp-3" : ""}`}>
+          {item.description}
+        </p>
+      </div>
+      <button
+        type="button"
+        onClick={handleToggle}
+        className="mt-1.5 text-sm font-medium text-primary hover:underline focus:outline-none focus:underline"
+      >
+        {expanded ? readLess : readMore}
+      </button>
+    </>
+  )
+
+  if (isJumperFeatured) {
+    return (
+      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#9ed68a] bg-[#d3e2c9] dark:bg-green-950/30 dark:border-green-800/50 p-5 [box-shadow:var(--shadow-soft)] hover:border-[#8ed078] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
+        <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
+          <div
+            className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#9ed68a] dark:border-t-green-800/90 border-l-[32px] border-l-transparent shadow-sm"
+            aria-hidden
+          />
+          <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider text-green-800 dark:text-green-200 bg-white/90 dark:bg-green-900/80 shadow-sm rotate-12 border border-[#9ed68a]/80">
+            NEW
+          </span>
+        </div>
+        <div className="flex items-start gap-3 pr-8">
+          <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
+            {descriptionBlock}
+          </div>
+        </div>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/card-link inline-flex items-center gap-2 mt-4 px-5 py-2.5 text-sm font-semibold rounded-[1rem] bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground active:scale-[0.98] transition-all duration-300"
+        >
+          {buttonText}
+          <span className="transition-transform group-hover/card-link:translate-x-0.5" aria-hidden="true">›</span>
+        </a>
+      </div>
+    )
+  }
 
   if (isKeelungCookFeatured) {
     return (
@@ -45,9 +117,7 @@ function ContentCard({
           <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
           <div className="flex-1 min-w-0">
             <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
-              {item.description}
-            </p>
+            {descriptionBlock}
           </div>
         </div>
         <a
@@ -79,9 +149,7 @@ function ContentCard({
           <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
           <div className="flex-1 min-w-0">
             <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
-              {item.description}
-            </p>
+            {descriptionBlock}
           </div>
         </div>
         <a
@@ -114,9 +182,7 @@ function ContentCard({
           <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
           <div className="flex-1 min-w-0">
             <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
-              {item.description}
-            </p>
+            {descriptionBlock}
           </div>
         </div>
         <a
@@ -138,9 +204,7 @@ function ContentCard({
         <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
         <div className="flex-1 min-w-0">
           <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
-            {item.description}
-          </p>
+          {descriptionBlock}
         </div>
       </div>
       <a
@@ -168,12 +232,30 @@ function AndroidGameCard({
   item,
   buttonText,
   spanTwoCols,
+  readMore,
+  readLess,
 }: {
   item: AndroidGameItem
   buttonText: string
   spanTwoCols?: boolean
+  readMore: string
+  readLess: string
 }) {
+  const [expanded, setExpanded] = useState(false)
+  const [descriptionVisible, setDescriptionVisible] = useState(true)
   const isFeatured = spanTwoCols && item.youtubeId
+
+  useEffect(() => {
+    if (!descriptionVisible) {
+      const t = setTimeout(() => setDescriptionVisible(true), 200)
+      return () => clearTimeout(t)
+    }
+  }, [descriptionVisible])
+
+  const handleToggle = () => {
+    setDescriptionVisible(false)
+    setExpanded((e) => !e)
+  }
 
   return (
     <div
@@ -196,9 +278,20 @@ function AndroidGameCard({
             <span aria-hidden>🥚</span>
             {item.name}
           </h4>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-none whitespace-pre-line">
-            {item.description}
-          </p>
+          <div
+            className={`transition-opacity duration-200 ease-out ${descriptionVisible ? "opacity-100" : "opacity-0"}`}
+          >
+            <p className={`mt-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-line ${!expanded ? "line-clamp-3" : ""}`}>
+              {item.description}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handleToggle}
+            className="mt-1.5 text-sm font-medium text-primary hover:underline focus:outline-none focus:underline"
+          >
+            {expanded ? readLess : readMore}
+          </button>
           <a
             href={item.url}
             target="_blank"
@@ -247,6 +340,8 @@ export function FeaturedContent() {
                 item={item}
                 buttonText={t.playButton}
                 spanTwoCols={!!item.youtubeId}
+                readMore={t.readMore}
+                readLess={t.readLess}
               />
             ))}
           </div>
@@ -272,6 +367,9 @@ export function FeaturedContent() {
                   buttonText={t.playButton}
                   icon={icon}
                   featured={game.url === EGGCUTE_URL}
+                  featuredStyle={game.url === JUMPER_URL ? "green" : undefined}
+                  readMore={t.readMore}
+                  readLess={t.readLess}
                 />
               )
             })}
@@ -294,6 +392,8 @@ export function FeaturedContent() {
                 item={tool}
                 buttonText={t.openButton}
                 icon={toolIcons[index % toolIcons.length]}
+                readMore={t.readMore}
+                readLess={t.readLess}
               />
             ))}
           </div>
@@ -316,6 +416,8 @@ export function FeaturedContent() {
                 buttonText={t.openButton}
                 icon={socialIcons[index % socialIcons.length]}
                 featuredStyle={item.url === KEELUNG_COOK_URL ? "lightblue" : undefined}
+                readMore={t.readMore}
+                readLess={t.readLess}
               />
             ))}
           </div>
@@ -338,6 +440,8 @@ export function FeaturedContent() {
                 buttonText={t.prayButton}
                 icon={prayerIcons[index % prayerIcons.length]}
                 featuredStyle={item.url === PRAY_URL ? "yellow" : undefined}
+                readMore={t.readMore}
+                readLess={t.readLess}
               />
             ))}
           </div>
