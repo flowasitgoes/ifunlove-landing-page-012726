@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useRef, useLayoutEffect } from "react"
 import { useLanguage } from "./language-provider"
 
 const EGGCUTE_URL = "https://eggcute.ifunlove.com"
@@ -32,40 +32,46 @@ function ContentCard({
   readLess: string
 }) {
   const [expanded, setExpanded] = useState(false)
-  const [descriptionVisible, setDescriptionVisible] = useState(true)
+  const [isClamped, setIsClamped] = useState(false)
+  const descRef = useRef<HTMLParagraphElement>(null)
   const isEggCute = item.url === EGGCUTE_URL
   const isPrayFeatured = item.url === PRAY_URL && featuredStyle === "yellow"
   const isKeelungCookFeatured = item.url === KEELUNG_COOK_URL && featuredStyle === "lightblue"
   const isJumperFeatured = item.url === JUMPER_URL && featuredStyle === "green"
 
-  useEffect(() => {
-    if (!descriptionVisible) {
-      const t = setTimeout(() => setDescriptionVisible(true), 200)
-      return () => clearTimeout(t)
+  const checkClamped = () => {
+    if (!expanded && descRef.current) {
+      setIsClamped(descRef.current.scrollHeight > descRef.current.clientHeight)
     }
-  }, [descriptionVisible])
-
-  const handleToggle = () => {
-    setDescriptionVisible(false)
-    setExpanded((e) => !e)
   }
+
+  useLayoutEffect(() => {
+    checkClamped()
+    const ro = new ResizeObserver(checkClamped)
+    const el = descRef.current
+    if (el) ro.observe(el)
+    return () => ro.disconnect()
+  }, [expanded, item.description])
+
+  const showToggle = isClamped || expanded
 
   const descriptionBlock = (
     <>
-      <div
-        className={`transition-opacity duration-200 ease-out ${descriptionVisible ? "opacity-100" : "opacity-0"}`}
+      <p
+        ref={descRef}
+        className={`mt-2 text-sm text-muted-foreground leading-relaxed ${!expanded ? "line-clamp-3" : ""}`}
       >
-        <p className={`mt-2 text-sm text-muted-foreground leading-relaxed ${!expanded ? "line-clamp-3" : ""}`}>
-          {item.description}
-        </p>
-      </div>
-      <button
-        type="button"
-        onClick={handleToggle}
-        className="mt-1.5 text-sm font-medium text-primary hover:underline focus:outline-none focus:underline"
-      >
-        {expanded ? readLess : readMore}
-      </button>
+        {item.description}
+      </p>
+      {showToggle && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="mt-1.5 text-sm font-medium text-primary hover:underline focus:outline-none focus:underline"
+        >
+          {expanded ? readLess : readMore}
+        </button>
+      )}
     </>
   )
 
@@ -242,20 +248,25 @@ function AndroidGameCard({
   readLess: string
 }) {
   const [expanded, setExpanded] = useState(false)
-  const [descriptionVisible, setDescriptionVisible] = useState(true)
+  const [isClamped, setIsClamped] = useState(false)
+  const descRef = useRef<HTMLParagraphElement>(null)
   const isFeatured = spanTwoCols && item.youtubeId
 
-  useEffect(() => {
-    if (!descriptionVisible) {
-      const t = setTimeout(() => setDescriptionVisible(true), 200)
-      return () => clearTimeout(t)
+  const checkClamped = () => {
+    if (!expanded && descRef.current) {
+      setIsClamped(descRef.current.scrollHeight > descRef.current.clientHeight)
     }
-  }, [descriptionVisible])
-
-  const handleToggle = () => {
-    setDescriptionVisible(false)
-    setExpanded((e) => !e)
   }
+
+  useLayoutEffect(() => {
+    checkClamped()
+    const ro = new ResizeObserver(checkClamped)
+    const el = descRef.current
+    if (el) ro.observe(el)
+    return () => ro.disconnect()
+  }, [expanded, item.description])
+
+  const showToggle = isClamped || expanded
 
   return (
     <div
@@ -278,20 +289,21 @@ function AndroidGameCard({
             <span aria-hidden>🥚</span>
             {item.name}
           </h4>
-          <div
-            className={`transition-opacity duration-200 ease-out ${descriptionVisible ? "opacity-100" : "opacity-0"}`}
+          <p
+            ref={descRef}
+            className={`mt-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-line ${!expanded ? "line-clamp-3" : ""}`}
           >
-            <p className={`mt-2 text-sm text-muted-foreground leading-relaxed whitespace-pre-line ${!expanded ? "line-clamp-3" : ""}`}>
-              {item.description}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={handleToggle}
-            className="mt-1.5 text-sm font-medium text-primary hover:underline focus:outline-none focus:underline"
-          >
-            {expanded ? readLess : readMore}
-          </button>
+            {item.description}
+          </p>
+          {showToggle && (
+            <button
+              type="button"
+              onClick={() => setExpanded((e) => !e)}
+              className="mt-1.5 text-sm font-medium text-primary hover:underline focus:outline-none focus:underline"
+            >
+              {expanded ? readLess : readMore}
+            </button>
+          )}
           <a
             href={item.url}
             target="_blank"
