@@ -86,6 +86,11 @@ export const translations = {
     // Tools
     tools: [
       {
+        name: "Video Digest",
+        description: "Turn long YouTube videos into clear, readable articles. A blog that turns video content into structured, easy-to-read text.",
+        url: "https://summary.ifunlove.com/",
+      },
+      {
         name: "Border Maker",
         description: "Upload your favorite images and create charming, customizable borders. Adjust colors, download and print your designs, and invite friends to join in a fun cut-and-paste creative session together.",
         url: "https://border-maker.ifunlove.com",
@@ -217,6 +222,11 @@ export const translations = {
 
     // Tools
     tools: [
+      {
+        name: "Youtube 摘要博客",
+        description: "將 YouTube 的長影片整理成結構清晰、易於閱讀的文章。",
+        url: "https://summary.ifunlove.com/",
+      },
       {
         name: "華麗的邊框製作器",
         description: "上傳你喜愛的個性化圖片，製作可愛動人的邊框，不僅可以更改填色，還能夠下載並且儲存列印，邀請你的朋友一起來動手剪剪貼貼吧！",

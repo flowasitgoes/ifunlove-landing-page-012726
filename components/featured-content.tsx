@@ -7,6 +7,7 @@ const EGGCUTE_URL = "https://eggcute.ifunlove.com"
 const PRAY_URL = "https://pray.ifunlove.com"
 const KEELUNG_COOK_URL = "https://keelung-cook.ifunlove.com/"
 const JUMPER_URL = "https://jumper.ifunlove.com/home"
+const SUMMARY_URL = "https://summary.ifunlove.com/"
 
 type ContentItem = {
   name: string
@@ -27,7 +28,7 @@ function ContentCard({
   buttonText: string
   icon: string
   featured?: boolean
-  featuredStyle?: "violet" | "yellow" | "lightblue" | "green"
+  featuredStyle?: "violet" | "yellow" | "lightblue" | "green" | "lightyellow"
   readMore: string
   readLess: string
 }) {
@@ -38,6 +39,7 @@ function ContentCard({
   const isPrayFeatured = item.url === PRAY_URL && featuredStyle === "yellow"
   const isKeelungCookFeatured = item.url === KEELUNG_COOK_URL && featuredStyle === "lightblue"
   const isJumperFeatured = item.url === JUMPER_URL && featuredStyle === "green"
+  const isSummaryFeatured = item.url === SUMMARY_URL && featuredStyle === "lightyellow"
 
   const checkClamped = () => {
     if (!expanded && descRef.current) {
@@ -74,6 +76,38 @@ function ContentCard({
       )}
     </>
   )
+
+  if (isSummaryFeatured) {
+    return (
+      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#eeee99] bg-[#ffffbb] dark:bg-yellow-950/30 dark:border-yellow-800/50 p-5 [box-shadow:var(--shadow-soft)] hover:border-[#dddd88] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
+        <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
+          <div
+            className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#eeee99] dark:border-t-yellow-800/90 border-l-[32px] border-l-transparent shadow-sm"
+            aria-hidden
+          />
+          <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider text-yellow-800 dark:text-yellow-200 bg-white/90 dark:bg-yellow-900/80 shadow-sm rotate-12 border border-[#eeee99]/80">
+            NEW
+          </span>
+        </div>
+        <div className="flex items-start gap-3 pr-8">
+          <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
+            {descriptionBlock}
+          </div>
+        </div>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/card-link inline-flex items-center gap-2 mt-4 px-5 py-2.5 text-sm font-semibold rounded-[1rem] bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground active:scale-[0.98] transition-all duration-300"
+        >
+          {buttonText}
+          <span className="transition-transform group-hover/card-link:translate-x-0.5" aria-hidden="true">›</span>
+        </a>
+      </div>
+    )
+  }
 
   if (isJumperFeatured) {
     return (
@@ -228,7 +262,7 @@ function ContentCard({
 
 // Emoji for each: 2048, Longcat, Coins, Color City, Gamebox, Guitarship, Border Maker, Kaomoji, Pray for you
 const gameIcons = ["🎮", "🐱", "🪙", "🏙️", "📦", "🎸", "🥚"]
-const toolIcons = ["🖼️", "☺️"]
+const toolIcons = ["📝", "🖼️", "☺️"]
 const socialIcons = ["🍳"]
 const prayerIcons = ["🙏"]
 
@@ -404,6 +438,7 @@ export function FeaturedContent() {
                 item={tool}
                 buttonText={t.openButton}
                 icon={toolIcons[index % toolIcons.length]}
+                featuredStyle={tool.url === SUMMARY_URL ? "lightyellow" : undefined}
                 readMore={t.readMore}
                 readLess={t.readLess}
               />
