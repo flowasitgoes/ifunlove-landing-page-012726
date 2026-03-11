@@ -12,7 +12,7 @@ const fontRounded = M_PLUS_Rounded_1c({
 
 const title = 'ifunlove — Playful Games, Art & Design from Taiwan'
 const description =
-  'A playful digital universe from Taiwan (愛瘋樂 ifunlove): small web games like Platform Jumper (跳躍階梯遊戲), ColorDance (填色遊戲), Egg Cute (小蛋配對); Pray for you (為你禱告); Keelung Cooking (向基隆阿嬤學做菜). Creative tools, design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
+  'A playful digital universe from Taiwan (愛瘋樂 ifunlove): small web games like Platform Jumper (跳躍階梯遊戲), ColorDance (填色遊戲), Egg Cute (小蛋配對); Pray for you (為你禱告); Keelung Cooking (向基隆阿嬤學做菜). Tools: Video Digest (Youtube 摘要博客), 12.fun (music visualizer). Creative tools, design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
 const ogImage = { url: '/og-image.jpg', alt: 'ifunlove — playful games, art & design from Taiwan' }
 
 export const metadata: Metadata = {
@@ -60,6 +60,16 @@ export const metadata: Metadata = {
     '邊框製作器',
     'Kaomoji',
     '顏文字',
+    'Video Digest',
+    'Youtube 摘要博客',
+    'YouTube 摘要',
+    'summary ifunlove',
+    '12.fun',
+    'Twelve Zodiac',
+    'music visualizer',
+    '互動音樂視覺化',
+    '十二星座 視覺',
+    'zodiac ifunlove',
     'Taiwan digital culture',
     'playful web games',
     'indie games',
@@ -160,6 +170,18 @@ export default function RootLayout({
         name: 'Kaomoji Tool',
         alternateName: '顏文字小幫手',
         description: 'Japanese kaomoji expressions to brighten your messages. Double-click to copy. Hidden surprises like cakes and classic poetry.',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Video Digest',
+        alternateName: ['Youtube 摘要博客', 'YouTube 摘要'],
+        description: 'Turn long YouTube videos into clear, readable articles. A blog that turns video content into structured, easy-to-read text.',
+      },
+      {
+        '@type': 'Thing',
+        name: '12.fun',
+        alternateName: ['Twelve Zodiac', '互動音樂視覺化'],
+        description: 'Interactive music visualizer and generative art. Twelve zodiac themes—upload your music, choose music, and watch the visuals flow.',
       },
     ],
   }

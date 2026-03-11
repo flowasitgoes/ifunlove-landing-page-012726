@@ -100,6 +100,11 @@ export const translations = {
         description: "A delightful collection of Japanese kaomoji expressions to brighten your messages. Double-click to copy and paste, and discover hidden surprises like cakes and classic poetry along the way.",
         url: "https://kaomoji.ifunlove.com",
       },
+      {
+        name: "12.fun",
+        description: "Interactive music visualizer and generative art. Twelve zodiac themes—upload your music, choose music, and watch the visuals flow.",
+        url: "https://zodiac.ifunlove.com/",
+      },
     ],
 
     // Social
@@ -236,6 +241,11 @@ export const translations = {
         name: "顏文字小幫手",
         description: "盛裝豐富表情的日本顏文字被引進到本站啦！在你與朋友或家人傳遞訊息時，加入無限想像與美意。雙擊即可複製貼上，還藏有蛋糕與唐詩彩蛋喔！",
         url: "https://kaomoji.ifunlove.com",
+      },
+      {
+        name: "12.fun",
+        description: "互動音樂視覺化與生成藝術。十二星座主題——上傳你選擇的音樂，聆聽欣賞，讓心情隨畫面一起流動。",
+        url: "https://zodiac.ifunlove.com/",
       },
     ],
 
