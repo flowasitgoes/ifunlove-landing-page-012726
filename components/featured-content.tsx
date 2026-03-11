@@ -81,7 +81,7 @@ function ContentCard({
 
   if (isZodiacFeatured) {
     return (
-      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#e8e0d0] bg-[#f5f0e6] dark:bg-amber-950/20 dark:border-amber-800/40 p-5 [box-shadow:var(--shadow-soft)] hover:border-[#ddd5c4] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
+      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#e8e0d0] bg-[#d2ccbf] dark:bg-amber-950/20 dark:border-amber-800/40 p-5 [box-shadow:var(--shadow-soft)] hover:border-[#ddd5c4] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
         <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
           <div
             className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#e8e0d0] dark:border-t-amber-800/80 border-l-[32px] border-l-transparent shadow-sm"
