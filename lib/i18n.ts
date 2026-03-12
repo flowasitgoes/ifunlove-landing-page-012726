@@ -70,6 +70,16 @@ export const translations = {
         description: "A cozy 9-grid matching game with cute eggs. Pair them up and enjoy a gentle, healing puzzle—no pressure, just quiet moments of play.",
         url: "https://eggcute.ifunlove.com",
       },
+      {
+        name: "Night Market Fried Chicken",
+        description: "Everyone understands and loves Taiwan's night market culture. The smell of fried chicken and basil gives travelers from around the world a shared memory. A small street food game.",
+        url: "https://street-food.ifunlove.com/",
+      },
+      {
+        name: "2:03 AM",
+        description: "A night market in Taiwan. Run through the street at 2 a.m. as travelers line up for fried chicken. Talk to strangers, buy a bag when ready—a small stall run game.",
+        url: "https://stall-run.ifunlove.com",
+      },
     ],
 
     // Android Games
@@ -211,6 +221,16 @@ export const translations = {
         name: "小蛋配對",
         description: "療癒系九宮格配對遊戲。和小蛋們一起配對，在輕鬆的節奏裡享受安靜的遊戲時光。",
         url: "https://eggcute.ifunlove.com",
+      },
+      {
+        name: "夜市鹹酥雞",
+        description: "大家都懂、都愛的台灣夜市文化。凌晨兩點，鹹酥雞與九層塔的香氣，讓來自各地的旅人擁有共同記憶。小遊戲。",
+        url: "https://street-food.ifunlove.com/",
+      },
+      {
+        name: "凌晨兩點零三分",
+        description: "台灣夜市，凌晨兩點人潮依舊的鹹酥雞攤。進入街道、與旅人對話、買一袋再出發的小遊戲。",
+        url: "https://stall-run.ifunlove.com",
       },
     ],
 
