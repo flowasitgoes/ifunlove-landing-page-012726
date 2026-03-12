@@ -10,10 +10,10 @@ const fontRounded = M_PLUS_Rounded_1c({
   display: "swap",
 })
 
-const title = 'ifunlove — Playful Games, Art & Design from Taiwan'
+const title = 'ifunlove 愛瘋樂 — Playful Games, Art & Design from Taiwan'
 const description =
   'A playful digital universe from Taiwan (愛瘋樂 ifunlove): small web games like Platform Jumper (跳躍階梯遊戲), ColorDance (填色遊戲), 2:03 AM (凌晨兩點零三分), Street food with Travelers! (10國的旅人來到台灣啦), Egg Cute (小蛋配對); Pray for you (為你禱告); Keelung Cooking (向基隆阿嬤學做菜). Tools: Video Digest (Youtube 摘要博客), 12.fun (music visualizer). Creative tools, design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
-const ogImage = { url: '/og-image.jpg', alt: 'ifunlove — playful games, art & design from Taiwan' }
+const ogImage = { url: '/og-image.jpg', alt: 'ifunlove 愛瘋樂 — playful games, art & design from Taiwan' }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ifunlove.com'),
