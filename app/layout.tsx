@@ -12,7 +12,7 @@ const fontRounded = M_PLUS_Rounded_1c({
 
 const title = 'ifunlove — Playful Games, Art & Design from Taiwan'
 const description =
-  'A playful digital universe from Taiwan (愛瘋樂 ifunlove): small web games like Platform Jumper (跳躍階梯遊戲), ColorDance (填色遊戲), Egg Cute (小蛋配對); Pray for you (為你禱告); Keelung Cooking (向基隆阿嬤學做菜). Tools: Video Digest (Youtube 摘要博客), 12.fun (music visualizer). Creative tools, design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
+  'A playful digital universe from Taiwan (愛瘋樂 ifunlove): small web games like Platform Jumper (跳躍階梯遊戲), ColorDance (填色遊戲), 2:03 AM (凌晨兩點零三分), Street food with Travelers! (10國的旅人來到台灣啦), Egg Cute (小蛋配對); Pray for you (為你禱告); Keelung Cooking (向基隆阿嬤學做菜). Tools: Video Digest (Youtube 摘要博客), 12.fun (music visualizer). Creative tools, design experiments. No sign-up, no downloads—curious, healing, and made for explorers who love art and play.'
 const ogImage = { url: '/og-image.jpg', alt: 'ifunlove — playful games, art & design from Taiwan' }
 
 export const metadata: Metadata = {
@@ -70,6 +70,21 @@ export const metadata: Metadata = {
     '互動音樂視覺化',
     '十二星座 視覺',
     'zodiac ifunlove',
+    'roguelike',
+    '旅遊',
+    '旅遊 遊戲',
+    '2:03 AM',
+    '凌晨兩點零三分',
+    'stall run game',
+    'night market game Taiwan',
+    'Night Market Fried Chicken',
+    '夜市鹹酥雞',
+    'Street food with Travelers',
+    '10國的旅人來到台灣啦',
+    'Taiwan night market game',
+    '台灣夜市 遊戲',
+    'street food game',
+    '鹹酥雞 遊戲',
     'Taiwan digital culture',
     'playful web games',
     'indie games',
@@ -182,6 +197,18 @@ export default function RootLayout({
         name: '12.fun',
         alternateName: ['Twelve Zodiac', '互動音樂視覺化'],
         description: 'Interactive music visualizer and generative art. Twelve zodiac themes—upload your music, choose music, and watch the visuals flow.',
+      },
+      {
+        '@type': 'Thing',
+        name: '2:03 AM',
+        alternateName: '凌晨兩點零三分',
+        description: 'A night market in Taiwan. Run through the street at 2 a.m. as travelers line up for fried chicken. Talk to strangers, buy a bag when ready—a small stall run game.',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Street food with Travelers!',
+        alternateName: ['10國的旅人來到台灣啦', '夜市鹹酥雞'],
+        description: 'A cute, abstract little game where you meet 10 travelers from around the world at a night market: Iceland, Mongolia, Bhutan, Madagascar, Paraguay, Slovenia, Namibia, Albania, Greenland, and Bolivia. Taiwan\'s street food culture brings everyone together.',
       },
     ],
   }

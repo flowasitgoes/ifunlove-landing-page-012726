@@ -71,8 +71,8 @@ export const translations = {
         url: "https://eggcute.ifunlove.com",
       },
       {
-        name: "Night Market Fried Chicken",
-        description: "Everyone understands and loves Taiwan's night market culture. The smell of fried chicken and basil gives travelers from around the world a shared memory. A small street food game.",
+        name: "Street food with Travelers!",
+        description: "A cute, abstract little game where you meet 10 travelers from around the world at a night market: Iceland, Mongolia, Bhutan, Madagascar, Paraguay, Slovenia, Namibia, Albania, Greenland, and Bolivia. Taiwan's street food culture brings everyone together.",
         url: "https://street-food.ifunlove.com/",
       },
       {
@@ -223,8 +223,8 @@ export const translations = {
         url: "https://eggcute.ifunlove.com",
       },
       {
-        name: "夜市鹹酥雞",
-        description: "大家都懂、都愛的台灣夜市文化。凌晨兩點，鹹酥雞與九層塔的香氣，讓來自各地的旅人擁有共同記憶。小遊戲。",
+        name: "10國的旅人來到台灣啦！",
+        description: "會遇到 10 國旅人的可愛抽象圖小遊戲：冰島、蒙古、不丹、馬達加斯加、巴拉圭、斯洛維尼亞、納米比亞、阿爾巴尼亞、格陵蘭、玻利維亞。台灣夜市文化，讓大家聚在一起。",
         url: "https://street-food.ifunlove.com/",
       },
       {
