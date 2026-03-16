@@ -509,10 +509,10 @@ export function FeaturedContent() {
               const originalIndex = t.games.findIndex((g) => g.url === game.url)
               const icon = gameIcons[originalIndex % gameIcons.length]
               return (
-                <ContentCard
-                  key={game.name}
-                  item={game}
-                  buttonText={t.playButton}
+              <ContentCard
+                key={game.name}
+                item={game}
+                buttonText={t.playButton}
                   icon={icon}
                   featured={game.url === EGGCUTE_URL}
                   featuredStyle={

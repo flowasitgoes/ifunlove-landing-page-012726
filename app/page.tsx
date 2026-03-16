@@ -8,6 +8,7 @@ import { FeaturedContent } from "@/components/featured-content"
 import { BrowseByMood } from "@/components/browse-by-mood"
 import { About } from "@/components/about"
 import { Donation } from "@/components/donation"
+import { KoFiWidget } from "@/components/ko-fi-widget"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
           <About />
 
           <Donation />
+
+          <KoFiWidget />
         </main>
 
         <Footer />

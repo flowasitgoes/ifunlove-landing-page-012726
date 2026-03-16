@@ -155,7 +155,7 @@ export const translations = {
 
     // Footer
     copyright: "© 2026 ifunlove 愛瘋樂",
-    madeWith: "Made with care",
+    madeWith: "Made for fun",
   },
   "zh-TW": {
     // Header（愛瘋樂 = ifunlove 中文名，便於搜尋「愛瘋樂」找到本站）
