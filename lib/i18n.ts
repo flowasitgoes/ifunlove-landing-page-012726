@@ -22,6 +22,7 @@ export const translations = {
 
     // Featured section
     featuredTitle: "Featured",
+    interactivePhysicalGamesTitle: "Interactive physical games",
     androidGamesTitle: "Android Games",
     gamesTitle: "Web Games",
     toolsTitle: "Tools",
@@ -32,6 +33,16 @@ export const translations = {
     prayButton: "Enter",
     readMore: "more +",
     readLess: "less -",
+
+    // Interactive physical games
+    interactivePhysicalGames: [
+      {
+        name: "Tofu Run",
+        description:
+          "A group cheer jog in the city. Get a Runner ID to join, pick your tofu toppings, explore checkpoints at Kaohsiung Central Park, and collect your tofu passport—run, run, run, and enjoy the bowl you gather together.",
+        url: "https://tofu-run.ifunlove.com/",
+      },
+    ],
 
     // Games
     games: [
@@ -174,6 +185,7 @@ export const translations = {
 
     // Featured section
     featuredTitle: "精選",
+    interactivePhysicalGamesTitle: "互動實體遊戲",
     androidGamesTitle: "Android 遊戲",
     gamesTitle: "網站遊戲",
     toolsTitle: "工具",
@@ -184,6 +196,16 @@ export const translations = {
     prayButton: "進入",
     readMore: "更多 +",
     readLess: "收合 -",
+
+    // Interactive physical games
+    interactivePhysicalGames: [
+      {
+        name: "豆花慢跑",
+        description:
+          "城市裡的團體加油慢跑遊戲。取得 Runner ID 報名參加、選擇一碗豆花配料、到高雄中央公園各區探尋美味 Token，收集你的豆花護照——跑、跑、跑，一起完成屬於你們的一碗豆花。",
+        url: "https://tofu-run.ifunlove.com/",
+      },
+    ],
 
     // Games
     games: [

@@ -11,6 +11,7 @@ const STALL_RUN_URL = "https://stall-run.ifunlove.com"
 const STREET_FOOD_URL = "https://street-food.ifunlove.com/"
 const SUMMARY_URL = "https://summary.ifunlove.com/"
 const ZODIAC_URL = "https://zodiac.ifunlove.com/"
+const TOFU_RUN_URL = "https://tofu-run.ifunlove.com/"
 
 type ContentItem = {
   name: string
@@ -31,7 +32,7 @@ function ContentCard({
   buttonText: string
   icon: string
   featured?: boolean
-  featuredStyle?: "violet" | "yellow" | "lightblue" | "green" | "lightyellow" | "wheat" | "peach" | "cream"
+  featuredStyle?: "violet" | "yellow" | "lightblue" | "green" | "lightyellow" | "wheat" | "peach" | "cream" | "lightgreen"
   readMore: string
   readLess: string
 }) {
@@ -46,6 +47,7 @@ function ContentCard({
   const isZodiacFeatured = item.url === ZODIAC_URL && featuredStyle === "wheat"
   const isStallRunFeatured = item.url === STALL_RUN_URL && featuredStyle === "peach"
   const isStreetFoodFeatured = item.url === STREET_FOOD_URL && featuredStyle === "cream"
+  const isTofuRunFeatured = item.url === TOFU_RUN_URL && featuredStyle === "lightgreen"
 
   const checkClamped = () => {
     if (!expanded && descRef.current) {
@@ -82,6 +84,38 @@ function ContentCard({
       )}
     </>
   )
+
+  if (isTofuRunFeatured) {
+    return (
+      <div className="group relative overflow-hidden rounded-[1.25rem] border-2 border-[#c8e6c9] bg-[#e9f8e8] dark:bg-green-950/25 dark:border-green-800/50 p-5 [box-shadow:var(--shadow-soft)] hover:border-[#b8dfc0] hover:[box-shadow:var(--shadow-card-hover)] transition-all duration-300">
+        <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none">
+          <div
+            className="absolute top-0 right-0 w-0 h-0 border-t-[32px] border-t-[#c8e6c9] dark:border-t-green-800/90 border-l-[32px] border-l-transparent shadow-sm"
+            aria-hidden
+          />
+          <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider text-green-800 dark:text-green-200 bg-white/90 dark:bg-green-900/80 shadow-sm rotate-12 border border-[#c8e6c9]/80">
+            NEW
+          </span>
+        </div>
+        <div className="flex items-start gap-3 pr-8">
+          <span className="text-xl flex-shrink-0 mt-0.5 text-primary/70" aria-hidden="true">{icon}</span>
+          <div className="flex-1 min-w-0">
+            <h4 className="font-bold text-foreground leading-snug">{item.name}</h4>
+            {descriptionBlock}
+          </div>
+        </div>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/card-link inline-flex items-center gap-2 mt-4 px-5 py-2.5 text-sm font-semibold rounded-[1rem] bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground active:scale-[0.98] transition-all duration-300"
+        >
+          {buttonText}
+          <span className="transition-transform group-hover/card-link:translate-x-0.5" aria-hidden="true">›</span>
+        </a>
+      </div>
+    )
+  }
 
   if (isStallRunFeatured) {
     return (
@@ -363,6 +397,7 @@ function ContentCard({
 }
 
 // Emoji for each: 2048, Longcat, Coins, Color City, Gamebox, Guitarship, Border Maker, Kaomoji, Pray for you
+const physicalGameIcons = ["🥣"]
 const gameIcons = ["🎮", "🐱", "🪙", "🏙️", "📦", "🎸", "🥚", "🌙", "🍗"]
 const toolIcons = ["📝", "🖼️", "☺️", "♒"]
 const socialIcons = ["🍳"]
@@ -472,8 +507,32 @@ export function FeaturedContent() {
   return (
     <section className="w-full py-10 sm:py-12 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
+        {/* Interactive physical games */}
+        <div id="interactive-physical-games" className="scroll-mt-16">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="text-primary/50 text-lg" aria-hidden="true">🏃</span>
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground">
+              {t.interactivePhysicalGamesTitle}
+            </h3>
+            <span className="text-primary/50 text-lg" aria-hidden="true">🏃</span>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {t.interactivePhysicalGames.map((item, index) => (
+              <ContentCard
+                key={item.name}
+                item={item}
+                buttonText={t.playButton}
+                icon={physicalGameIcons[index % physicalGameIcons.length]}
+                featuredStyle={item.url === TOFU_RUN_URL ? "lightgreen" : undefined}
+                readMore={t.readMore}
+                readLess={t.readLess}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Android Games Section */}
-        <div id="android-games" className="scroll-mt-16">
+        <div id="android-games" className="mt-12 sm:mt-14 scroll-mt-16">
           <div className="flex items-center gap-3 mb-6">
             <span className="text-primary/50 text-lg" aria-hidden="true">📱</span>
             <h3 className="text-xl sm:text-2xl font-bold text-foreground">
